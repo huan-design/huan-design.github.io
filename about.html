@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huan Chang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li>
+                <a href="index.html" class="nav-brand">Huan Chang</a>
+            </li>
+            <div class="nav-menu">
+                <li class="nav-item has-dropdown">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-projects">
+                            <a href="projects/molli.html" class="dropdown-item">
+                                <img src="images/molli/molli_thumbnail.png" alt="Molli">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Molli</div>
+                                    <div class="dropdown-subtitle">Kids' Sleep Companion</div>
+                                </div>
+                            </a>
+                            <a href="projects/vita.html" class="dropdown-item">
+                                <img src="images/campbells/campbells_thumbnail.jpg" alt="Vita">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Vita</div>
+                                    <div class="dropdown-subtitle">Campbell's Reboot</div>
+                                </div>
+                            </a>
+                            <a href="projects/seremo.html" class="dropdown-item">
+                                <img src="images/huggie/huggie_thumbnail.jpg" alt="Seremó">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Seremo</div>
+                                    <div class="dropdown-subtitle">Privacy Lounge Unit</div>
+                                </div>
+                            </a>
+                            <a href="projects/dolphin.html" class="dropdown-item">
+                                <img src="images/dolphin/dolphin_thumbnail.jpg" alt="Dolphin">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Dolphin</div>
+                                    <div class="dropdown-subtitle">X-Acto Knife Redesign</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="main-content-wrapper">
+        <article class="about">
+            <div class="about-intro">
+                <div class="about-image-container">
+                    <img src="images/about/huan_photo.jpg" alt="Huan Chang" class="about-image">
+                    <div class="about-social-links">
+                        <a href="https://www.linkedin.com/in/huan-chang-29323834/" target="_blank">
+                            <img src="images/index/linkedInLogo.png" alt="LinkedIn" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/huanchang1111/" target="_blank">
+                            <img src="images/index/insLogo.png" alt="Instagram" class="social-icon">
+                        </a>
+                        <a href="#message" onclick="event.preventDefault(); document.querySelector('#message').scrollIntoView({behavior: 'smooth', block: 'center'})">
+                            <img src="images/index/emailLogo.png" alt="Email" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="about-intro-text">
+                    <p style="margin-bottom: 2rem;">Hi, my name is Huan (欢), which means joy and happiness in Chinese—a name that perfectly captures what I strive to bring to everyday life through designs.</p>
+                    <p style="margin-bottom: 2rem;">My journey into Industrial Design has been unconventional. Born and raised in China, I began my studies in English before moving to the U.S. to explore Political Science. Along the way, I worked in marketing, but it wasn't until I discovered Industrial Design that everything truly clicked.</p> 
+                    <p style="margin-bottom: 2rem;">Looking back, I see how each experience—whether analyzing consumer data, exploring cultural backgrounds, or studying human behavior—has shaped my approach to design. As Steve Jobs said in his Stanford speech, I've learned to "connect the dots." My diverse background allows me to approach problems from unique perspectives, refining my designs to be both functional and emotionally resonant.</p>
+                    <p style="margin-bottom: 2rem;">When not working, I enjoy reading about psychology and design. I also like practicing Chinese calligraphy and riding bike in the early morning, both of which help me relax and stay centered.</p>
+                </div>
+            </div>
+            
+            <section class="about-section">
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <div class="experience-title">San Francisco State University - BS. Industrial Design</div>
+                    <div class="experience-date">2024 - Present</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-title">University of Illinois at Chicago - MA. Political Science</div>
+                    <div class="experience-date">2012-2015</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-title">Northwest University in China - BA. English, Minor Finance</div>
+                    <div class="experience-date">2007-2011</div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2>Work Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-title">Marketing Assistant</div>
+                    <div class="experience-date">2018-2019</div>
+                    <div>BorderX Lab</div>
+                    <p>Marketing research, data analysis, US-China e-commerce, <br>product development in a startup environment</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2>Get in Touch</h2>
+                <form class="contact-form" action="https://formsubmit.co/300cb011ae9074822dd987a94692e098" method="POST">
+                    <!-- Honeypot -->
+                    <input type="text" name="_honey" style="display: none;">
+                    <!-- Disable Captcha -->
+                    <input type="hidden" name="_captcha" value="true">
+                    <!-- Success Page -->
+                    <input type="hidden" name="_next" value="https://huanchang.com/about.html">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </section>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="nav-brand">Huan Chang</a>
+                <p class="footer-text">I'm always open to new ideas and collaboration. If you'd like to connect and explore exciting possibilities, feel free to reach out.</p>
+            </div>
+            <div class="footer-center">
+                <a href="#message" onclick="event.preventDefault(); document.querySelector('#message').scrollIntoView({behavior: 'smooth', block: 'center'})">
+                    <img src="images/index/emailLogo.png" alt="Email" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/huan-chang-29323834/" target="_blank">
+                    <img src="images/index/linkedInLogo.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/huanchang1111/" target="_blank">
+                    <img src="images/index/insLogo.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copyright">Copyright © 2025 Huan Chang - All Rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScroll = window.scrollY;
+        const nav = document.querySelector('.nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.classList.add('nav--hidden');
+            } else {
+                nav.classList.remove('nav--hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html> 

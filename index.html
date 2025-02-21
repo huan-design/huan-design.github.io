@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huan Chang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li>
+                <a href="index.html" class="nav-brand">Huan Chang</a>
+            </li>
+            <div class="nav-menu">
+                <li class="nav-item has-dropdown">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-projects">
+                            <!-- Project 1: Molli -->
+                            <a href="projects/molli.html" class="dropdown-item">
+                                <img src="images/molli/molli_thumbnail.png" alt="Molli">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Molli</div>
+                                    <div class="dropdown-subtitle">Kids' Sleep Companion</div>
+                                </div>
+                            </a>
+                            <!-- Project 2: Seremó -->
+                            <a href="projects/seremo.html" class="dropdown-item">
+                                <img src="images/huggie/huggie_thumbnail.jpg" alt="Seremó">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Seremó</div>
+                                    <div class="dropdown-subtitle">Privacy Lounge Unit</div>
+                                </div>
+                            </a>
+                            <!-- Project 3: Vita -->
+                            <a href="projects/vita.html" class="dropdown-item">
+                                <img src="images/campbells/campbells_thumbnail.jpg" alt="Vita">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Vita</div>
+                                    <div class="dropdown-subtitle">Campbell's Reboot</div>
+                                </div>
+                            </a>
+                            <!-- Project 4: Dolphin -->
+                            <a href="projects/dolphin.html" class="dropdown-item">
+                                <img src="images/dolphin/dolphin_thumbnail.jpg" alt="Dolphin">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-title">Dolphin</div>
+                                    <div class="dropdown-subtitle">X-Acto Knife Redesign</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="main-content-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hh1">Hello, I'm Huan</h1>
+                <p class="b1">BS Industrial Design at SFSU</p>
+                <p class="b1">Passionate about designing products<br>that inspire positive emotions and healthier living</p>
+                <p class="hero-keywords">Multidisciplinary | Research-Driven | Emotion-Centered | International-Perspective</p>
+            </div>
+        </section>
+
+        <main class="projects-grid">
+            <!-- Project 1: Molli -->
+            <a href="projects/molli.html" class="project-card">
+                <img src="images/molli/molli_thumbnail.png" alt="Molli - Kids' Sleep Companion" class="project-image">
+                <div class="project-content">
+                    <h2 class="hh2 project-title">Molli</h2>
+                    <p class="b2">Good Night, Fresh Morning</p>
+                </div>
+            </a>
+            <!-- Project 2: Seremó -->
+            <a href="projects/seremo.html" class="project-card">
+                <img src="images/huggie/huggie_thumbnail.jpg" alt="Seremó" class="project-image">
+                <div class="project-content">
+                    <h2 class="h2 project-title">Seremó</h2>
+                    <p class="b2">Moment of Self-Care</p>
+                </div>
+            </a>
+            <!-- Project 3: Vita -->
+            <a href="projects/vita.html" class="project-card">
+                <img src="images/campbells/campbells_thumbnail.jpg" alt="Vita - Campbell's Project" class="project-image">
+                <div class="project-content">
+                    <h2 class="h2 project-title">Vita</h2>
+                    <p class="b2">Savoring the Future of Campbell's</p>
+                </div>
+            </a>
+            <!-- Project 4: Dolphin -->
+            <a href="projects/dolphin.html" class="project-card">
+                <img src="images/dolphin/dolphin_thumbnail.jpg" alt="Dolphin - X-Acto Knife Redesign" class="project-image">
+                <div class="project-content">
+                    <h2 class="h2 project-title">Dolphin</h2>
+                    <p class="b2">Flow Through Every Cut</p>
+                </div>
+            </a>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="nav-brand">Huan Chang</a>
+                <p class="footer-text">I'm always open to new ideas and collaboration. If you'd like to connect and explore exciting possibilities, feel free to reach out.</p>
+            </div>
+            <div class="footer-center">
+                <a href="about.html#message" onclick="event.preventDefault(); window.location.href='about.html#message'; setTimeout(() => document.querySelector('#message').scrollIntoView({behavior: 'smooth', block: 'center'}), 100)">
+                    <img src="images/index/emailLogo.png" alt="Email" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/huan-chang-29323834/" target="_blank">
+                    <img src="images/index/linkedInLogo.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/huanchang1111/" target="_blank">
+                    <img src="images/index/insLogo.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copyright">Copyright © 2025 Huan Chang - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScroll = window.scrollY;
+        const nav = document.querySelector('.nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            // Handle nav hide/show
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.classList.add('nav--hidden');
+            } else {
+                nav.classList.remove('nav--hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html> 
