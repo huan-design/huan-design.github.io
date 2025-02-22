@@ -97,37 +97,6 @@
                 </div>
             </div>
 
-            <div class="flow-map">
-                <div class="flow-item">
-                    <div class="flow-circle">1</div>
-                    <p class="flow-label">Challenge</p>
-                </div>
-                <div class="flow-item">
-                    <div class="flow-circle">2</div>
-                    <p class="flow-label">Research</p>
-                </div>
-                <div class="flow-item">
-                    <div class="flow-circle">3</div>
-                    <p class="flow-label">Ideation</p>
-                </div>
-                <div class="flow-item">
-                    <div class="flow-circle">4</div>
-                    <p class="flow-label">Prototyping</p>
-                </div>
-                <div class="flow-item">
-                    <div class="flow-circle">5</div>
-                    <p class="flow-label">Final Design</p>
-                </div>
-                <div class="flow-item">
-                    <div class="flow-circle">6</div>
-                    <p class="flow-label">Reflection</p>
-                </div>
-            </div>
-
-            <div class="vertical-flow">
-                <!-- Use JavaScript to generate vertical flow items -->
-            </div>
-
             <section class="challenge-section">
                 <div class="section-header">
                     <div class="bracket bracket-left">[</div>
@@ -223,8 +192,11 @@
                     </div>
                 </div>
 
-                <div class="lay-3image-text">
-                    <div class="image-grid">
+                <div class="lay-3image">
+                    <div class="subsection-header">
+                        <h3 class="t1">Initial Concepts</h3>
+                    </div>
+                    <div class="card-grid">
                         <div class="card">
                             <img src="../images/campbells/campbells_ideation_vegitableSmoothies.jpg" alt="Savory Vegi Smoothie">
                             <div class="card-content">
@@ -247,8 +219,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-content">
-                        <h3 class="t1">Why <br> Savory Smoothie?</h3>
+                    <div class="text-content" style="margin-top: 3rem;">
+                        <h3 class="t1">Why Savory Smoothie?</h3>
                         <ul class="b4">
                             <li><strong>No added sugar</strong> for a healthier alternative;</li>
                             <li><strong>Fresh and nutritious</strong> ingredients for better health benefits;</li>
@@ -343,7 +315,7 @@
         <div class="footer-content">
             <div class="footer-left">
                 <a href="../index.html" class="nav-brand">Huan Chang</a>
-                <p class="footer-text">I'm always open to new ideas and collaboration. If you'd like to connect and explore exciting possibilities, feel free to reach out.</p>
+                <p class="footer-text">Open to new ideas and collaborations. <br>Let's connect!</p>
             </div>
             <div class="footer-center">
                 <a href="../about.html#message" onclick="event.preventDefault(); window.location.href='../about.html#message'; setTimeout(() => document.querySelector('#message').scrollIntoView({behavior: 'smooth', block: 'center'}), 100)">
@@ -363,26 +335,10 @@
     </footer>
 
     <script>
-        // Generate vertical flow items
-        const verticalFlow = document.querySelector('.vertical-flow');
-        const flowLabels = ['Challenge', 'Research', 'Ideation', 'Prototyping', 'Final Design', 'Reflection'];
-        
-        flowLabels.forEach((label, index) => {
-            const item = document.createElement('div');
-            item.className = 'vertical-flow-item';
-            item.innerHTML = `
-                <div class="vertical-flow-circle">${index + 1}</div>
-                <span class="vertical-flow-label">${label}</span>
-            `;
-            verticalFlow.appendChild(item);
-        });
-
         let lastScroll = window.scrollY;
         const nav = document.querySelector('.nav');
         const overlay = document.querySelector('.scroll-overlay');
         const projectHero = document.querySelector('.project-hero');
-        
-        const horizontalFlow = document.querySelector('.flow-map');
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
@@ -399,16 +355,6 @@
             const heroHeight = projectHero.offsetHeight;
             const scrollPosition = window.scrollY - heroTop;
             
-            // Check horizontal flow map visibility
-            const horizontalFlowRect = horizontalFlow.getBoundingClientRect();
-            
-            // Only show vertical flow when horizontal flow is scrolled out of view (above the viewport)
-            if (horizontalFlowRect.bottom < 0) {
-                verticalFlow.classList.add('visible');
-            } else {
-                verticalFlow.classList.remove('visible');
-            }
-            
             if (scrollPosition > 0) {
                 const opacity = Math.min(scrollPosition / (heroHeight / 2), 0.7);
                 overlay.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
@@ -418,8 +364,7 @@
             
             lastScroll = currentScroll;
         });
-
-        // Add section tracking
+        
         const sections = [
             'challenge-section',
             'research-section',
@@ -429,24 +374,20 @@
             'reflection-section'
         ];
 
-        const flowCircles = document.querySelectorAll('.flow-circle');
         const flowItems = document.querySelectorAll('.flow-item');
+        const flowCircles = document.querySelectorAll('.flow-circle');
 
-        // Add click handlers to flow circles
         flowCircles.forEach((circle, index) => {
             circle.addEventListener('click', () => {
                 const section = document.querySelector(`.${sections[index]}`);
-                section.scrollIntoView({ behavior: 'smooth' });
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
-        // Track scroll position and update active circle
+        // Track active section for horizontal flow map
         window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            
-            // Your existing scroll handling code...
-
-            // Check which section is in view
             sections.forEach((sectionClass, index) => {
                 const section = document.querySelector(`.${sectionClass}`);
                 if (section) {
@@ -461,40 +402,6 @@
                         flowCircles[index].classList.add('active');
                     }
                 }
-            });
-        });
-
-        // Add section tracking for vertical flow
-        const verticalFlowItems = document.querySelectorAll('.vertical-flow-item');
-        
-        window.addEventListener('scroll', () => {
-            // Your existing scroll handling code...
-
-            // Check which section is in view
-            sections.forEach((sectionClass, index) => {
-                const section = document.querySelector(`.${sectionClass}`);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    const offset = window.innerHeight * 0.3;
-
-                    if (rect.top < offset && rect.bottom > offset) {
-                        flowItems.forEach(item => item.classList.remove('active'));
-                        flowCircles.forEach(circle => circle.classList.remove('active'));
-                        verticalFlowItems.forEach(item => item.classList.remove('active'));
-                        
-                        flowItems[index].classList.add('active');
-                        flowCircles[index].classList.add('active');
-                        verticalFlowItems[index].classList.add('active');
-                    }
-                }
-            });
-        });
-
-        // Add click handlers to vertical flow items
-        verticalFlowItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const section = document.querySelector(`.${sections[index]}`);
-                section.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>

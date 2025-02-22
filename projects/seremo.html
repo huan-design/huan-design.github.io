@@ -69,7 +69,7 @@
                 </div>
                 
                 <div class="project-description">
-                    <p class="b4">How can we design a lounge chair that not only provides <strong>privacy</strong> but also nurtures <strong>emotional well-being</strong> in both public and private settings? The goal was to create a space where users can truly unwind—free from distractions, wrapped in comfort, and immersed in a moment of calm. <p>Seremó is a <strong>privacy lounge unit</strong> designed as a personal retreat. Its high-back enclosure, integrated side table, soft reading light, and 360° rotation work seamlessly with an outer translucent casing to offer adjustable levels of privacy. More than just a chair, Seremó is a sanctuary—inviting you to slow down, recharge, and reconnect with yourself.</p>
+                    <p class="b4"> How can we design a lounge chair that not only provides <strong>privacy</strong> but also nurtures <strong>emotional well-being</strong> in both public and private settings? The goal was to create a space where users can truly unwind—free from distractions, wrapped in comfort, and immersed in a moment of calm. <p class="b4">Seremó is a <strong>privacy lounge unit</strong> designed as a personal retreat. Its high-back enclosure, integrated side table, soft reading light, and 360° rotation work seamlessly with an outer translucent casing to offer adjustable levels of privacy. More than just a chair, Seremó is a sanctuary—inviting you to slow down, recharge, and reconnect with yourself.</p>
                     
                     <div class="project-details">
                         <div class="details-column">
@@ -121,10 +121,6 @@
                     <div class="flow-circle">6</div>
                     <p class="flow-label">Reflection</p>
                 </div>
-            </div>
-
-            <div class="vertical-flow">
-                <!-- Use JavaScript to generate vertical flow items -->
             </div>
 
             <section class="challenge-section">
@@ -331,7 +327,7 @@
         <div class="footer-content">
             <div class="footer-left">
                 <a href="../index.html" class="nav-brand">Huan Chang</a>
-                <p class="footer-text">I'm always open to new ideas and collaboration. If you'd like to connect and explore exciting possibilities, feel free to reach out.</p>
+                <p class="footer-text">Open to new ideas and collaborations. <br>Let's connect!</p>
             </div>
             <div class="footer-center">
                 <a href="../about.html#message" onclick="event.preventDefault(); window.location.href='../about.html#message'; setTimeout(() => document.querySelector('#message').scrollIntoView({behavior: 'smooth', block: 'center'}), 100)">
@@ -351,26 +347,10 @@
     </footer>
 
     <script>
-        // Generate vertical flow items
-        const verticalFlow = document.querySelector('.vertical-flow');
-        const flowLabels = ['Challenge', 'Research', 'Ideation', 'Prototyping', 'Final Design', 'Reflection'];
-        
-        flowLabels.forEach((label, index) => {
-            const item = document.createElement('div');
-            item.className = 'vertical-flow-item';
-            item.innerHTML = `
-                <div class="vertical-flow-circle">${index + 1}</div>
-                <span class="vertical-flow-label">${label}</span>
-            `;
-            verticalFlow.appendChild(item);
-        });
-
         let lastScroll = window.scrollY;
         const nav = document.querySelector('.nav');
         const overlay = document.querySelector('.scroll-overlay');
         const projectHero = document.querySelector('.project-hero');
-        
-        const horizontalFlow = document.querySelector('.flow-map');
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
@@ -392,14 +372,6 @@
                 overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             }
             
-            const horizontalFlowRect = horizontalFlow.getBoundingClientRect();
-            
-            if (horizontalFlowRect.bottom < 0) {
-                verticalFlow.classList.add('visible');
-            } else {
-                verticalFlow.classList.remove('visible');
-            }
-            
             lastScroll = currentScroll;
         });
         
@@ -414,19 +386,9 @@
 
         const flowItems = document.querySelectorAll('.flow-item');
         const flowCircles = document.querySelectorAll('.flow-circle');
-        const verticalFlowItems = document.querySelectorAll('.vertical-flow-item');
 
         flowCircles.forEach((circle, index) => {
             circle.addEventListener('click', () => {
-                const section = document.querySelector(`.${sections[index]}`);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        verticalFlowItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
                 const section = document.querySelector(`.${sections[index]}`);
                 if (section) {
                     section.scrollIntoView({ behavior: 'smooth' });
@@ -444,11 +406,9 @@
                     if (rect.top < offset && rect.bottom > offset) {
                         flowItems.forEach(item => item.classList.remove('active'));
                         flowCircles.forEach(circle => circle.classList.remove('active'));
-                        verticalFlowItems.forEach(item => item.classList.remove('active'));
                         
                         flowItems[index].classList.add('active');
                         flowCircles[index].classList.add('active');
-                        verticalFlowItems[index].classList.add('active');
                     }
                 }
             });
